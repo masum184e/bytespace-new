@@ -11,7 +11,7 @@ export function CreatorCTA() {
     "
     >
       <div className="max-w-5xl mx-auto px-6 py-20 md:py-24 text-center">
-        <h2 className="max-w-xl mx-auto text-[44px] md:text-4xl font-semibold leading-[120%] tracking-[-1%] md:leading-[1.15]">
+        <h2 className="max-w-xl mx-auto text-[44px] md:text-4xl font-semibold leading-[120%] tracking-[-1%] md:leading-[1.15] font-poppins">
           Unlock Your Potential as a Creator with ByteSpace
         </h2>
 
@@ -25,7 +25,7 @@ export function CreatorCTA() {
 
         <Button
           size="lg"
-          className="text-lg font-medium leading-[120%] tracking-normal mt-10 rounded-full px-6 py-3 bg-lime-400 hover:bg-lime-500 text-gray-950"
+          className="h-[46px] font-medium leading-[120%] tracking-normal mt-10 rounded-full px-6 py-3 bg-lime-400 hover:bg-lime-500 text-gray-950"
         >
           <Link href="#">Join as Creator</Link>
         </Button>

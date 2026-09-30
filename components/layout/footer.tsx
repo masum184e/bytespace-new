@@ -58,7 +58,7 @@ export function Footer() {
 
             <form
               onSubmit={handleSubmit}
-              className="mt-10 flex items-center gap-4"
+              className="mt-10 flex items-center gap-2"
             >
               <Input
                 type="email"
@@ -67,7 +67,7 @@ export function Footer() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 aria-label="Email address"
-                className="h-[52px] rounded-full px-6 text-base font-normal leading-[160%] border border-gray-200 tracking-normal shadow-none placeholder:text-gray-950 flex-1"
+                className="h-[52px] rounded-full px-6 py-3 text-base font-normal leading-[160%] tracking-normal border border-gray-200 shadow-none placeholder:text-gray-950 flex-1"
               />
               <Button
                 type="submit"
