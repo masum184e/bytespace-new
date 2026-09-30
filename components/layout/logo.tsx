@@ -1,20 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const Logo = () => {
+interface LogoProps {
+  textColor?: string;
+}
+
+const Logo = ({ textColor }: LogoProps) => {
   return (
     <Link href="/" className="flex items-end gap-2" aria-label="ByteSpace">
       <Image
         src="/logo.svg"
         alt="ByteSpace logo"
-        width={28.88}
-        height={31.5}
+        width={29}
+        height={32}
         priority
         className="h-8 w-8 shrink-0"
       />
 
       <span
-        className="text-[24px] text-gray-950 font-bold leading-none tracking-normal"
+        className={`text-[24px] font-bold leading-none tracking-normal ${
+          textColor ?? "text-gray-950"
+        }`}
         style={{
           fontFamily: "Clash Display, sans-serif",
         }}
