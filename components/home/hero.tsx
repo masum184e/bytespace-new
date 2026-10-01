@@ -15,6 +15,59 @@ const students = [
 
 const cardClass = "absolute rounded-2xl bg-white p-4 shadow-sm z-15";
 
+export const LearningProgress = ({ position }: { position: string }) => {
+  return (
+    <div
+      className={`${cardClass} ${position} hidden w-[232px] md:block`}
+    >
+      <p className="text-sm font-medium leading-[120%] tracking-normal text-gray-950">
+        Learning Progress
+      </p>
+      <p className="mt-2 text-5xl font-semibold leading-[120%] tracking-[-1%] text-gray-950">
+        55%
+      </p>
+      <div className="mt-3 h-2 w-full rounded-3xl bg-gray-200">
+        <div
+          className="h-full rounded-3xl bg-lime-400"
+          style={{ width: "55%" }}
+        />
+      </div>
+    </div>
+  );
+};
+
+export const HappyStudents = ({ position }: { position: string }) => {
+  return (
+    <div
+      className={`${cardClass} ${position} hidden w-[258px] md:block`}
+    >
+      <p className="text-base font-medium leading-[120%] tracking-normal text-gray-950">
+        Happy Students
+      </p>
+      <p className="mt-0.5 text-xs font-normal leading-[120%] tracking-normal text-gray-950 flex items-center gap-1">
+        4.5 <span className="text-gray-400">(240)</span>
+        <Star className="h-4 w-4 fill-lime-400 text-lime-400" />
+      </p>
+      <div className="mt-2 flex items-center">
+        {students.map((src, i) => (
+          <Avatar
+            key={src}
+            className="-ml-2 h-10 w-10 border-2 border-white first:ml-0"
+          >
+            <AvatarImage src={src} alt="" className="object-cover" />
+            <AvatarFallback className="bg-neutral-300 text-[10px] text-white">
+              {i + 1}
+            </AvatarFallback>
+          </Avatar>
+        ))}
+        <span className="-ml-2 flex h-10 w-10 items-center justify-center rounded-full border-2 border-white text-xs font-bold leading-[150%] tracking-normal text-gray-950 bg-lime-400">
+          2K+
+        </span>
+      </div>
+    </div>
+  );
+};
+
 function HeroVisual() {
   return (
     <div className="relative z-15 w-full max-w-[900px] mx-auto h-[420px] mt-14 md:absolute md:bottom-0 md:left-1/2 md:mt-0 md:h-[500px] md:w-[900px] md:-translate-x-1/2">
@@ -46,59 +99,18 @@ function HeroVisual() {
       </div>
 
       {/* Progress */}
-      <div
-        className={`${cardClass} left-[572px] top-[127px] hidden w-[232px] md:block`}
-      >
-        <p className="text-sm font-medium leading-[120%] tracking-normal text-gray-950">
-          Learning Progress
-        </p>
-        <p className="mt-2 text-5xl font-semibold leading-[120%] tracking-[-1%] text-gray-950">
-          55%
-        </p>
-        <div className="mt-3 h-2 w-full rounded-3xl bg-gray-200">
-          <div
-            className="h-full rounded-3xl bg-lime-400"
-            style={{ width: "55%" }}
-          />
-        </div>
-      </div>
+      <LearningProgress position="left-[572px] top-[127px]" />
 
       {/* Happy students */}
-      <div
-        className={`${cardClass} left-[58px] top-[313px] hidden w-[258px] md:block`}
-      >
-        <p className="text-base font-medium leading-[120%] tracking-normal text-gray-950">
-          Happy Students
-        </p>
-        <p className="mt-0.5 text-xs font-normal leading-[120%] tracking-normal text-gray-950 flex items-center gap-1">
-          4.5 <span className="text-gray-400">(240)</span>
-          <Star className="h-4 w-4 fill-lime-400 text-lime-400" />
-        </p>
-        <div className="mt-2 flex items-center">
-          {students.map((src, i) => (
-            <Avatar
-              key={src}
-              className="-ml-2 h-10 w-10 border-2 border-white first:ml-0"
-            >
-              <AvatarImage src={src} alt="" className="object-cover" />
-              <AvatarFallback className="bg-neutral-300 text-[10px] text-white">
-                {i + 1}
-              </AvatarFallback>
-            </Avatar>
-          ))}
-          <span className="-ml-2 flex h-10 w-10 items-center justify-center rounded-full border-2 border-white text-xs font-bold leading-[150%] tracking-normal text-gray-950 bg-lime-400">
-            2K+
-          </span>
-        </div>
-      </div>
+      <HappyStudents position="left-[58px] top-[313px]" />
     </div>
   );
 }
 
-const LIME = "#E6FD2E";
-const WHITE = "#FAFAFA";
-const SHADE_LIME = 0.14; // 0 = flat, higher = more 3D shading
-const SHADE_WHITE = 0.08;
+export const LIME = "#E6FD2E";
+export const WHITE = "#FAFAFA";
+export const SHADE_LIME = 0.14; // 0 = flat, higher = more 3D shading
+export const SHADE_WHITE = 0.08;
 
 const px = (n: number) => {
   const cqw = `${(n / 14.4).toFixed(3)}cqw`;
@@ -107,7 +119,7 @@ const px = (n: number) => {
 
 type Anchor = Partial<Record<"left" | "right" | "top" | "bottom", number>>;
 
-function Shape({
+export function Shape({
   file,
   color,
   shade,
