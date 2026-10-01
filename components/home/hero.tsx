@@ -13,7 +13,7 @@ const students = [
   "/avatar/students/5.png",
 ];
 
-const cardClass = "absolute rounded-2xl bg-white p-4 shadow-sm z-15";
+const cardClass = "absolute rounded-2xl bg-white p-4 shadow-sm z-[15]";
 
 export const LearningProgress = ({ position }: { position: string }) => {
   return (
@@ -70,7 +70,7 @@ export const HappyStudents = ({ position }: { position: string }) => {
 
 function HeroVisual() {
   return (
-    <div className="relative z-15 w-full max-w-[900px] mx-auto h-[420px] mt-14 md:absolute md:bottom-0 md:left-1/2 md:mt-0 md:h-[500px] md:w-[900px] md:-translate-x-1/2">
+    <div className="pointer-events-none relative z-[15] w-full max-w-[900px] mx-auto h-[420px] mt-14 md:absolute md:bottom-0 md:left-1/2 md:mt-0 md:h-[500px] md:w-[900px] md:-translate-x-1/2">
       {/* Lime arc */}
       <div
         aria-hidden
@@ -177,9 +177,11 @@ export function Shape({
 
 function Shapes() {
   return (
-    // Above the arc (z-10) so the torus and spiral overlap it like the design,
-    // below the text (z-20). Desktop only: on phones they would crowd the text.
-    <div aria-hidden className="absolute inset-0 z-[15] hidden md:block">
+
+    <div
+      aria-hidden
+      className="pointer-events-none absolute inset-0 z-[15] hidden md:block"
+    >
       {/* 1 · lime spiral — left edge, cropped by the edge */}
       <Shape
         file="symbol_1_spiral.png"
@@ -260,7 +262,7 @@ const Hero = () => {
           <Header />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-5xl px-6 pb-16 pt-12 text-center md:pb-0 md:pt-[50px]">
+        <div className="relative z-20 mx-auto max-w-5xl px-6 pb-16 pt-12 text-center md:pb-0 md:pt-[50px]">
           <h1 className="text-4xl font-semibold leading-[120%] tracking-[-1%] md:text-6xl lg:text-[72px]">
             Get Access to Hundreds Courses Available
           </h1>
@@ -276,7 +278,7 @@ const Hero = () => {
             className="mx-auto mt-10 flex w-full max-w-[580px] items-center gap-4 md:mt-[59px]"
           >
             <div className="relative flex-1">
-              <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
+              <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
 
               <Input
                 name="q"

@@ -127,7 +127,7 @@ const CreatorVisual = () => {
       />
 
       {/* 2. Happy Students */}
-      <HappyStudents position="left-[284px] top-[377px] z-40" />
+      <HappyStudents position="left-[284px] top-[377px] z-[40]" />
 
       {/* 1. Frontmost: Shape */}
       <div className="relative z-50">
